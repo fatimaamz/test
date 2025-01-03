@@ -1,0 +1,62 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<odoo>
+    <!-- <record id="view_company_form_with_image" model="ir.ui.view">
+         <field name="name">res.company.form.with.image</field>
+         <field name="model">res.company</field>
+         <field name="inherit_id" ref="base.view_company_form"/>
+         <field name="arch" type="xml">
+             <xpath expr="//page[@name='general_info']//group[1]" position="inside">
+                 <group>
+                     <field name="report_logo" widget="image" class="oe_avatar" options="{'preview_image': 'report_logo'}"/>
+                 </group>
+             </xpath>
+         </field>
+     </record>-->
+
+
+    <template id="report_saleorder_document_customized" inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//div[@name='so_total_summary']" position="after">
+
+            <br/>
+            <br/>
+            <br/>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <!-- Colonne de gauche pour le texte -->
+                    <td style="width: 60%; vertical-align: top; text-align: left;">
+                        <p>
+                            <strong style="color:#3c90e3;">CONDITIONS</strong>
+                        </p>
+                        <p>
+                            <strong style="color: #1A5276;">Délai de réalisation</strong>
+                            <br/>
+                            Intervention sur site : 24 heures après validation de la commande.
+                        </p>
+                        <p>
+                            <strong style="color: #1A5276;">Modalité du paiement</strong>
+                            <br/>
+                            50% à la réception du Bon de Commande, 50% à la livraison des attestations.
+                        </p>
+                    </td>
+
+                    <!-- Colonne de droite pour l'image -->
+                    <td style="width: 40%; vertical-align: top; text-align: right;">
+                        <img src="/devis_facture_signature/static/signature.png"
+                             style="height: 200px; width: 300px;"/>
+                    </td>
+                </tr>
+            </table>
+
+
+        </xpath>
+
+
+    </template>
+
+
+</odoo>
+
+
+
+    
